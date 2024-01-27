@@ -716,7 +716,7 @@ Step 5: System Configuration
        zypper install grub2-x86_64-efi dosfstools os-prober
        mkdosfs -F 32 -s 1 -n EFI ${DISK}-part2
        mkdir /boot/efi
-       echo /dev/disk/by-uuid/$(blkid -s PARTUUID -o value ${DISK}-part2) \
+       echo PARTUUID=$(blkid -s PARTUUID -o value ${DISK}-part2) \
           /boot/efi vfat defaults 0 0 >> /etc/fstab
        mount /boot/efi
 
