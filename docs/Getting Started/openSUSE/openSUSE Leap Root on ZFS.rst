@@ -831,7 +831,7 @@ Step 6: Kernel Installation
 
 #. Refresh the initrd files::
 
-     mkinitrd
+     dracut -f --regenerate-all
 
    **Note:** After some installations, LUKS partition cannot seen by dracut,
    this will print “Failure occured during following action:
